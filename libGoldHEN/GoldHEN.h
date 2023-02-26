@@ -72,21 +72,28 @@ extern "C" {
 
 #define GOLDHEN_SDK_VERSION       0x00000100 // 1.00
 
-    extern int sys_sdk_cmd(uint64_t cmd, void* data);
+#ifdef LIBRARY_IMPL
+#define PRX_INTERFACE __declspec(dllexport)
+#else
+#define PRX_INTERFACE __declspec(dllimport)
+#endif
 
-    extern int sys_sdk_jailbreak(struct jailbreak_backup* jb);
 
-    extern int sys_sdk_unjailbreak(struct jailbreak_backup* jb);
+    PRX_INTERFACE int sys_sdk_cmd(uint64_t cmd, void* data);
 
-    uint32_t sys_sdk_version();
+    PRX_INTERFACE int sys_sdk_jailbreak(struct jailbreak_backup* jb);
 
-    int sys_sdk_proc_info(struct proc_info* info);
+    PRX_INTERFACE int sys_sdk_unjailbreak(struct jailbreak_backup* jb);
 
-    int sys_sdk_proc_rw(struct proc_rw* data);
+    PRX_INTERFACE uint32_t sys_sdk_version();
 
-    int sys_sdk_proc_prx_load(char* process_name, char* prx_path);
+    PRX_INTERFACE int sys_sdk_proc_info(struct proc_info* info);
 
-    int sys_sdk_proc_prx_unload(char* process_name, int prx_handle);
+    PRX_INTERFACE int sys_sdk_proc_rw(struct proc_rw* data);
+
+    PRX_INTERFACE int sys_sdk_proc_prx_load(char* process_name, char* prx_path);
+
+    PRX_INTERFACE int sys_sdk_proc_prx_unload(char* process_name, int prx_handle);
 
 #ifdef __cplusplus
 }

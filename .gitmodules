@@ -1,0 +1,3 @@
+[submodule "External/StubMaker"]
+	path = External/StubMaker
+	url = https://github.com/OSM-Made/StubMaker

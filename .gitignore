@@ -9,6 +9,15 @@
 *.user
 *.userosscache
 *.sln.docstates
+*.pkg
+*.bin
+*.sprx
+*.prx
+*.a
+*.elf
+*.oelf
+*.dll
+Executables/
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
@@ -17,8 +26,10 @@
 mono_crash.*
 
 # Build results
+Orbis_[Dd]ebug/
 [Dd]ebug/
 [Dd]ebugPublic/
+Orbis_[Rr]elease/
 [Rr]elease/
 [Rr]eleases/
 x64/
@@ -97,6 +108,10 @@ StyleCopReport.xml
 *.pidb
 *.svclog
 *.scc
+*.obj
+*.a
+*.o
+*.tlog
 
 # Chutzpah Test files
 _Chutzpah*
@@ -361,3 +376,5 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+/Playstation/Build/pkg/Orbis Toolbox/sflash0
+/Windows/Installer/BootstrapperSetup/aspnetcore-runtime-6.0.4-win-x64.exe
